@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechHub - بوابتك إلى عالم التكنولوجيا</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo" onclick="showPage('homepage')">TechHub</div>
+
+        <nav class="nav">
+            <ul>
+                <li><a class="nav-link active" data-page="homepage">الصفحة الرئيسية</a></li>
+                <li><a class="nav-link" data-page="shop">المتجر</a></li>
+                <li><a class="nav-link" data-page="phones">هواتف</a></li>
+            </ul>
+        </nav>
+
+        <div class="icons">
+            <a class="nav-link" data-page="cart">🛒</a>
+
+        </div>
+    </header>
+
+    <main>
+        <!-- الصفحة الرئيسية -->
+        <div id="homepage" class="page-content active">
+            <section class="hero-section">
+                <div class="hero-images">
+        <img src="17.jpeg" alt="هاتف مميز">
+        <img src="altrua book.jpeg" alt="لابتوب مميز">
+        <img src="mouse.jpeg" alt="ماوس جيمنج" class="hero-product-image watch">
+        <img src="air.jpeg" alt="لابتوب مميز">
+    </div>
+    <button class="cta-button" onclick="showPage('shop')">تسوق عروض اليوم!</button>
+</section>
+               
+
+            <section class="section">
+                <h2>منتجات مميزة (الأكثر مبيعاً)</h2>
+                <div class="product-grid" id="homepage-grid"></div>
+            </section>
+        </div>
+
+        <!-- المتجر -->
+        <div id="shop" class="page-content">
+            <section class="section">
+                <h2>جميع المنتجات</h2>
+                <div class="product-grid" id="shop-grid"></div>
+            </section>
+        </div>
+
+        <!-- الهواتف -->
+        <div id="phones" class="page-content">
+            <section class="section">
+                <h2>أفضل الهواتف</h2>
+                <div class="product-grid" id="phones-grid"></div>
+            </section>
+        </div>
+
+        <!-- السلة -->
+        <div id="cart" class="page-content">
+            <section class="section">
+                <h2>سلة المشتريات</h2>
+                <div id="cart-items-container"></div>
+                <div class="cart-total">
+                    الإجمالي الكلي: <span id="total-price">0.00</span> ج.م
+                    <button class="cta-button" style="margin-top: 20px;" onclick="showCheckout()">متابعة الدفع</button>
+                </div>
+            </section>
+        </div>
+
+        <!-- الدفع -->
+        <div id="checkout-page" class="page-content">
+            <section class="section">
+                <h2>إتمام الدفع</h2>
+                <div class="checkout-form">
+                    <div id="payment-success-message" class="alert-success">
+                        ✔ تم الدفع بنجاح! سيتم شحن طلبك قريباً.
+                    </div>
+
+                    <form id="payment-form">
+                        <h3>بيانات الشحن والدفع</h3>
+                        <div class="form-group">
+                            <label>الاسم الكامل</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>العنوان التفصيلي</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>البريد الإلكتروني</label>
+                            <input type="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>رقم البطاقة</label>
+                            <input type="text" maxlength="16" required>
+                        </div>
+
+                        <p style="font-weight:bold;">
+                            الإجمالي النهائي:
+                            <span id="final-total-price" style="color: var(--color-accent);">0.00</span> ج.م
+                        </p>
+
+                        <button class="cta-button" style="width:100%;">تأكيد الدفع الآن</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+
+    <div id="toast-message"></div>
+    <script src="script.js"></script>
+</body>
+</html>
