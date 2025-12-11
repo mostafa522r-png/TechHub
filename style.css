@@ -15,7 +15,7 @@ body {
     direction: rtl;
     background: linear-gradient(135deg, var(--color-gray) 0%, var(--color-light-gray) 50%, var(--color-light) 100%);
     background-size: 200% 200%;
-    animation: backgroundShift 25s infinite alternate ease-in-out; 
+    animation: backgroundShift 25s infinite alternate ease-in-out;
 }
 
 @keyframes backgroundShift {
@@ -46,21 +46,21 @@ body {
 .hero-section {
     /* 🎨 تغيير الخلفية لتكون رمادية صلبة (بدلاً من صورة اللابتوب أو الخلفية الداكنة) */
     background: #898989; /* لون رمادي متوسط */
-    
+
     /* أو يمكنك استخدام تدرج خفيف مثل هذا: */
-     background: linear-gradient(135deg, #e1e1e1 0%, #000000 100%); 
-    
+     background: linear-gradient(135deg, #e1e1e1 0%, #000000 100%);
+
     /* إزالة خصائص الخلفية إذا كنت تستخدم لونًا صلبًا */
     background-size: cover; /* يمكنك الاحتفاظ بها أو حذفها */
     background-position: center;
-    
+
     padding: 120px 25px;
     text-align: center;
-    color: var(--color-light); 
-    
-    border-radius: 12px; 
-    margin: 20px auto; 
-    max-width: 1200px; 
+    color: var(--color-light);
+
+    border-radius: 12px;
+    margin: 20px auto;
+    max-width: 1200px;
     box-shadow: 0 8px 15px rgba(255, 0, 0, 0.2);
 }
 
@@ -125,3 +125,143 @@ body {
 @keyframes slideOut { from { transform:translateX(0); opacity:1; } to { transform:translateX(100%); opacity:0; } }
 
 .footer { background:var(--color-dark); color:white; padding:20px; margin-top:40px; text-align:center; border-radius:8px; }
+body {
+  font-size: 16px; /* حجم خط مناسب */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .header {
+    padding: 10px 15px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .header .logo {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .nav ul {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+  .nav a {
+    font-size: 16px;
+    padding: 5px 0;
+  }
+  .header .icons {
+    margin-top: 10px;
+  }
+
+  .page-content {
+    padding: 15px;
+  }
+
+  .hero-section {
+    padding: 60px 15px;
+    margin: 10px;
+  }
+  .hero-section h1 {
+    font-size: 28px;
+  }
+  .hero-section p {
+    font-size: 16px;
+  }
+  .hero-images {
+    gap: 15px;
+    max-width: 100%;
+  }
+  .hero-images img {
+    height: 100px;
+    width: auto;
+    max-width: 120px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+  }
+  .product-card {
+    padding: 10px;
+  }
+  .product-card img {
+    height: 180px;
+  }
+  .price {
+    font-size: 18px;
+  }
+
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    font-size: 16px;
+  }
+  .cart-item div {
+    margin-bottom: 5px;
+  }
+  .cart-total {
+    padding: 15px;
+    font-size: 18px;
+  }
+
+  .checkout-form {
+    padding: 15px;
+    margin: 10px;
+  }
+  .form-group input {
+    padding: 10px;
+  }
+
+  #toast-message {
+    bottom: 15px;
+    right: 15px;
+    left: 15px;
+    font-size: 16px;
+    transform: translateX(0);
+  }
+  #toast-message.show {
+    animation: slideInMobile 0.5s forwards;
+  }
+  #toast-message.hide {
+    animation: slideOutMobile 0.5s forwards;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section h1 {
+    font-size: 24px;
+  }
+  .hero-section p {
+    font-size: 14px;
+  }
+  .hero-images img {
+    height: 100px;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+  .product-card img {
+    height: 150px;
+  }
+
+  .cart-item {
+    font-size: 14px;
+  }
+  .cart-total {
+    font-size: 16px;
+  }
+
+  .checkout-form {
+    padding: 10px;
+  }
+}
+
+@keyframes slideInMobile {
+  to { transform: translateX(0); opacity: 1; }
+}
+@keyframes slideOutMobile {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateY(100%); opacity: 0; }
+}
